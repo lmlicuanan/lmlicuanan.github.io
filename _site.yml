@@ -2,7 +2,7 @@ name: "lmlicuanan.github.io"
 title: "lino licuanan"
 description: |
   lino licuanan
-output_dir: "_site"
+output_dir: "docs"
 navbar:
   right:
     - text: "Home"
