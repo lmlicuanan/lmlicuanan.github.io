@@ -11,6 +11,7 @@ output:
     toc: true
     toc_float: true
 categories:
+  - draft
   - data-science
   - geospatial
 preview: makati.png
@@ -23,7 +24,10 @@ suppressPackageStartupMessages({
   library(osmdata)
   library(tidyverse)
   library(sf)
+  library(targets)
 })
+
+tar_unscript()
 ```
 
 ```{r}

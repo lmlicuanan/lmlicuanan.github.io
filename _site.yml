@@ -2,6 +2,7 @@ name: "lmlicuanan.github.io"
 title: "lino licuanan"
 description: |
   lino licuanan
+favicon: https://images.emojiterra.com/google/noto-emoji/v2.028/128px/1f44b.png
 output_dir: "docs"
 navbar:
   search: false
