@@ -2,4 +2,4 @@
 
 An attempt at documenting my work and learnings.
 
-lmlicuanan.github.io/
+www.lmlicuanan.github.io
