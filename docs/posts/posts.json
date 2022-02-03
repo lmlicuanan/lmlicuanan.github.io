@@ -14,9 +14,9 @@
       "data-science",
       "geospatial"
     ],
-    "contents": "\nWIP haha\n\n\n\n",
-    "preview": {},
-    "last_modified": "2022-02-03T20:37:42+08:00",
-    "input_file": "demystifying-openstreetmap-data.knit.md"
+    "contents": "\n\n\nknitr::include_graphics(\"makati.png\")\n\n\n\n\n\n\n\n",
+    "preview": "posts/2022-02-03-demystifying-openstreetmap-data/makati.png",
+    "last_modified": "2022-02-03T21:03:51+08:00",
+    "input_file": {}
   }
 ]
