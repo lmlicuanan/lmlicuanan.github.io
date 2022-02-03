@@ -1,0 +1,22 @@
+[
+  {
+    "path": "posts/2022-02-03-demystifying-openstreetmap-data/",
+    "title": "Demystifying OpenStreetMap Data",
+    "description": "Suprisingly easy to grab rich information from one of the largest repositories of (free) geospatial data.",
+    "author": [
+      {
+        "name": "Lino Licuanan",
+        "url": {}
+      }
+    ],
+    "date": "2022-02-03",
+    "categories": [
+      "data-science",
+      "geospatial"
+    ],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-02-03T20:11:38+08:00",
+    "input_file": "demystifying-openstreetmap-data.knit.md"
+  }
+]

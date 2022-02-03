@@ -1,21 +1,12 @@
 {
   "articles": [
     {
-      "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2022-02-03T17:08:48+08:00"
-    },
-    {
       "path": "index.html",
-      "title": "lino licuanan",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "title": "Articles",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2022-02-03T17:08:48+08:00"
+      "contents": "\n\n\n\nLino Licuanan. I’m a product manager with 3 years of experience in the Philippine fintech space (PayMaya, First Circle). Mediocre data scientist. Graduating MSc Industrial Engineering student @ UP Diliman.Gonna try (emphasis on try haha) documenting my work and learnings here on product, data, and their intersection.\n\n\n\n\n\n",
+      "last_modified": "2022-02-03T20:11:33+08:00"
     }
   ],
-  "collections": []
+  "collections": ["posts/posts.json"]
 }

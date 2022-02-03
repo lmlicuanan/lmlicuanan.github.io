@@ -1,15 +1,21 @@
 ---
-title: "lino licuanan"
-description: |
-  Welcome to the website. I hope you enjoy it!
+title: "Articles"
 site: distill::distill_website
+listing: posts
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+<br><br>
 
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
+<font size="2">
 
+```{r, echo=FALSE, results='asis', out.width= "20%", out.extra='style="float:left; padding-right:30px"'}
+knitr::include_graphics("assets/lino.png")
+
+cat("<b>Lino Licuanan.</b> I'm a product manager with 3 years of experience in the Philippine fintech space (PayMaya, First Circle). Mediocre data scientist. Graduating MSc Industrial Engineering student @ UP Diliman.<br>")
+
+cat("Gonna try (emphasis on try haha) documenting my work and learnings here on product, data, and their intersection.")
 ```
 
+</font>
+
+---
