@@ -1,5 +1,6 @@
 ---
 title: "Lino Licuanan"
+favicon: https://images.emojiterra.com/google/noto-emoji/v2.028/128px/1f44b.png
 image: "assets/lino.png"
 links:
   - label: LinkedIn
