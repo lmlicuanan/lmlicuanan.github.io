@@ -8,15 +8,97 @@ date: 2022-02-03
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_float: true
 categories:
   - data-science
   - geospatial
 preview: makati.png
 ---
 
+# Introduction
 
 ```{r}
-knitr::include_graphics("makati.png")
+suppressPackageStartupMessages({
+  library(osmdata)
+  library(tidyverse)
+  library(sf)
+})
 ```
 
+```{r}
+httr::set_config(httr::config(ssl_verifypeer = FALSE))
+
+study_region.bb <- getbb("Makati", format_out = "polygon") %>% head(1)
+
+building.ql <- 
+  study_region.bb %>% opq() %>% 
+  add_osm_feature(key = "building")
+
+road.ql <- 
+  study_region.bb %>% opq() %>% 
+  add_osm_feature(key = "highway")
+
+city.ql <- 
+  study_region.bb %>% opq() %>% 
+  add_osm_feature(key = "admin_level", value = "6")
+
+boundary.ql <- 
+  study_region.bb %>% opq() %>% 
+  add_osm_feature(key = "admin_level", value = "10")
+
+amenity.ql <- 
+  study_region.bb %>% opq() %>% 
+  add_osm_feature(key = "amenity")
+
+building.sf     <- building.ql %>% osmdata_sf() %>% trim_osmdata(study_region.bb)
+road.sf         <- road.ql %>% osmdata_sf() %>% trim_osmdata(study_region.bb)
+boundary.sf     <- boundary.ql %>% osmdata_sf() %>% trim_osmdata(study_region.bb)
+city.sf         <- city.ql %>% osmdata_sf() %>% trim_osmdata(study_region.bb)
+# left untrimmed to factor in edge correction
+amenity.sf      <- amenity.ql %>% osmdata_sf()
+# only randomly sample in areas where there is a known building
+set.seed(2022)
+mc_point.sf     <- st_as_sf(st_sample(city.sf$osm_multipolygons, 22 * 16))
+
+httr::set_config(httr::config(ssl_verifypeer = TRUE))
+
+amenity_point.sf <- amenity.sf$osm_points %>% 
+  transmute(
+    amenity = case_when(
+      amenity == "bank" ~ "bank",
+      amenity %in% c("restaurant", "fast_food") ~ "restaurant",
+      amenity %in% c("bar", "pub", "gambling", "nightclub", "casino") ~ "bar",
+      amenity %in% c("bus_station", "taxi", "ferry_terminal") ~ "terminal",
+      amenity %in% c("clinic", "hospital", "doctors", "dentist") ~ "hc_facility",
+      amenity == "pharmacy" ~ "pharmacy",
+      amenity %in% c("school", "college") ~ "school",
+      amenity == "place_of_worship" ~ "place_of_worship",
+      TRUE ~ NA_character_
+    ), value = TRUE
+  ) %>% mutate(amenity_key = amenity) %>% 
+  filter(!is.na(amenity)) %>% spread(key = amenity_key, value = value, fill = FALSE)
+
+mc_point_params.sf <- aggregate(
+  amenity_point.sf,
+  mc_point.sf,
+  FUN = function(x) sum(as.logical(x), na.rm = TRUE),
+  join = function(x, y) st_is_within_distance(x, y, dist = 250)
+) %>% filter(!is.na(amenity))
+```
+
+```{r}
+ggplot() +
+  geom_sf(data = building.sf$osm_polygons) +
+  geom_sf(data = road.sf$osm_lines) +
+  geom_sf(data = amenity_point.sf %>% filter(!bank), 
+          aes(group = amenity, colour = amenity),
+          alpha = 0.8) +
+  geom_sf(data = mc_point_params.sf, aes(alpha = bank, size = bank), col = "red") +
+  scale_colour_viridis_d() + 
+  labs(
+    title = "Points of Interest and Bank Density in the City of Makati, Philippines", 
+    caption = "Bank density measured by counting bank branches within 250-m radius."
+  )
+```
 

@@ -8,6 +8,8 @@ links:
     url: "https://github.com/lmlicuanan/"
   - label: Email
     url: "mailto:linolicuanan@gmail.com"
+  - label: Calendar
+    url: "https://calendly.com/linolicuanan/"
 output:
   postcards::solana
 ---
@@ -20,7 +22,7 @@ Hi, I'm Lino Licuanan. I'm a product manager with 3 years of experience in the P
 
 Particularly interested in products where data plays a central role in delivering superior CX, returns, and social benefit. Happy to consult with organizations on how to go about that.
 
-In my free time I boulder, go night running, and listen to a ton of podcasts.
+In my free time I boulder, go night running, and listen to podcasts.
  
 ### Experience
 
@@ -32,7 +34,7 @@ In my free time I boulder, go night running, and listen to a ton of podcasts.
 
 **Product Manager II** | 9/2021 - 1/2022
 
-* **Summary**. Lead PM for the Revolving Credit Line – flexible & immediate access to funds for SMEs. Full stack orchestration of engineering, data, & operations. 2 direct reports, successfully promoting one.
+* **Summary**. Lead PM for the Revolving Credit Line – flexible & immediate access to funds for SMEs. Full stack orchestration of engineering, data, & operations. Two direct reports, successfully promoting one.
 
 * **Product Line Discovery**. Validated strategies for enabling customers to substantially grow their revenues, thereby generating organic demand for credit. Roadmap greenlit by CEO and dictated company-wide workstreams for 2022 H1.
 
@@ -40,7 +42,7 @@ In my free time I boulder, go night running, and listen to a ton of podcasts.
 
 **Data Product Manager** | 1/2021 - 8/2021
 
-* **Summary**. Lead PM for 4 Data Engineers and 2 Data Analysts. All initiatives to augment and automate every decision made in First Circle.
+* **Summary**. Lead PM for the Data team. All initiatives to augment and automate every decision made in First Circle.
 
 * **Underwriting Engines**. Led initiatives to turn a manual credit limit setting process into an automated recommendation system within 1 month of new product launch. 1-3 hours saved per application and full Risk control over underwriting parameters.
 
