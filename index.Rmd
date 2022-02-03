@@ -11,9 +11,9 @@ listing: posts
 ```{r, echo=FALSE, results='asis', out.width= "20%", out.extra='style="float:left; padding-right:30px"'}
 knitr::include_graphics("assets/lino.png")
 
-cat("<b>Lino Licuanan.</b> I'm a product manager with 3 years of experience in the Philippine fintech space (PayMaya, First Circle). Mediocre data scientist. Graduating MSc Industrial Engineering student @ UP Diliman.<br>")
+cat("<b>Lino Licuanan.</b> I'm a product manager with 3 years of experience in the Philippine fintech space (<a href=https://www.paymaya.com>PayMaya</a>, <a href=https://www.firstcircle.ph>First Circle</a>), and specializing in data products. Graduating MSc Industrial Engineering student @ UP Diliman.<br>")
 
-cat("Gonna try (emphasis on try haha) documenting my work and learnings here on product, data, and their intersection.")
+cat("This is an attempt at documenting my work and learnings. Will probably get things wrong here and there haha so DYOR.")
 ```
 
 </font>

@@ -6,8 +6,10 @@ output_dir: "docs"
 navbar:
   search: false
   right:
-    - text: "Home"
+    - text: "Articles"
       href: index.html
+    - text: "About"
+      href: about.html
 output: distill::distill_article
 theme: default.css
 collections:
