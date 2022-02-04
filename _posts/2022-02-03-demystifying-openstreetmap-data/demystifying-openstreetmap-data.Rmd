@@ -23,11 +23,11 @@ citation_url: https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstr
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MHZYW9421"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-  gtag('config', 'G-9MHZYW9421');
+gtag('config', 'G-9MHZYW9421');
 </script>
 </head>
 
@@ -35,11 +35,31 @@ citation_url: https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstr
 
 OpenStreetMap is a platform for crowdsourcing geospatial information from basically anywhere volunteers are willing to go. This makes it one of the most powerful databases readily available to the public -- contributors have been known to visit locations no single operator can reach (including Google). The database has use cases ranging from mapping far flung communities pre-calamity, to giving your Grab driver the best possible route.
 
+```{r, include=FALSE}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(leaflet)
+})
+```
+
+```{r, echo=FALSE}
+tibble(long = 121.7740, lat = 12.8797) %>% 
+  leaflet(width = 900) %>% addTiles() %>% addMarkers() %>% 
+  fitBounds(117.17, 5.58, 126.54, 18.51)
+```
+
 One I found intriguing was a study conducted by researchers from Thinking Machines Data Science, Inc., where they were able to spatially interpolate poverty incidences across the Philippines with extremely high accuracy, and rivaling state-of-the-art approaches on proprietary data [@ph_poverty_prediction_2018].
 
 Below I show just a very lightweight introduction for someone looking to get their feet wet with OpenStreetMap.
 
 # Prerequisites
+
+I make use of two R frameworks below:
+
+* `tidyverse` [@tidyverse] (or `dplyr` to be specific) for its suitability for data processing.
+* `targets` [@targets] as a pipeline toolkit for optimizing runtime.
+
+This exercise is best suited for someone already having some familiarity with these, but elaborate on core concepts all the same later.
 
 # Data & Preprocessing
 
@@ -49,7 +69,7 @@ Below I show just a very lightweight introduction for someone looking to get the
 suppressPackageStartupMessages({
   library(targets)
   library(tidyverse)
-  library(sf)  
+  library(sf)
 })
 
 tar_unscript()
