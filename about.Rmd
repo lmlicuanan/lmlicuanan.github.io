@@ -31,72 +31,36 @@ output:
 
 ### Bio
 
-Hi, I'm Lino Licuanan. I'm a product manager with 3 years of experience in the fintech space (<a href=https://www.paymaya.com>PayMaya</a>, <a href=https://www.firstcircle.ph>First Circle</a>). Proficient in R & SQL for practical data science & analytics. Graduating MSc Industrial Engineering student @ UP Diliman by end of 2022.
+Hi, I'm Lino Licuanan. I am a product manager with 3 years of experience in the Philippine fintech space orchestrating product strategy from concept to execution.
 
 Particularly interested in products where data plays a central role in delivering superior CX, returns, and social benefit. Happy to consult with organizations on how to go about driving that.
 
-In my free time I boulder, go night running, and listen to podcasts.
+Proficient in R & SQL for practical data science & analytics. Graduating MSc Industrial Engineering student @ UP Diliman by end of 2022. In my free time I boulder, go night running, and listen to podcasts.
  
 ### Experience
 
-##### PayMaya Philippines, Inc.
+###### **PayMaya Philippines, Inc.**
 
-**IAM Product Manager** | 2/2022 - Present
+Product Management, Identity & Access Management | 2/2022 - Present
 
-##### First Circle Growth Finance Corporation
+###### **First Circle Growth Finance Corporation**
 
-**Product Manager II** | 9/2021 - 1/2022
+Lead Product Management, Revolving Credit Line | 9/2021 - 1/2022
 
-* **Summary**. Lead PM for the Revolving Credit Line – flexible & immediate access to funds for SMEs. Full stack orchestration of engineering, data, & operations. Two direct reports, successfully promoting one.
+Data Product Management, Underwriting System | 1/2021 - 8/2021
 
-* **Product Line Discovery**. Validated strategies for enabling customers to substantially grow their revenues, thereby generating organic demand for credit. Roadmap greenlit by CEO and dictated company workstreams for 2022 H1.
+Data Strategy, Acquisition | 7/2019 - 12/2020
 
-* **COVID-19 Growth Hacking**. Led initiatives that built outbound channels from ground up generating PHP ~500Mn of potential business monthly at negligible cost, and eliminating dependence on digital dating back to 2016. Reduced 3 of 8 KYC requirements with no risk concession, enabling upfront offers pre-customer action. Rationalized pricing discounts that profitably increased retention – peaked at ~93% of business being retention-driven.
+###### **Jollibee Foods Corporation**
 
-**Data Product Manager** | 1/2021 - 8/2021
-
-* **Summary**. Lead PM for the Data team. All initiatives to augment and automate every decision made in First Circle.
-
-* **Underwriting Engines**. Led initiatives to turn a manual credit limit setting process into an automated recommendation system within 1 month of new product launch. 1-3 hours saved per application and full Risk control over underwriting parameters.
-
-* **KYC Processing**. Led release of an app that can capture any information and have this used in automation systems. Expanded the universe of underwriting inputs to unlock research on networks, revenues, debt, and margins. Launched a feature that can extract bank statement requirements in <5 minutes.
-
-* **Entity Resolution**. Led experimentation around use cases for a Graph Database. MVP’d company and person resolution from a gamut of entity sources, powering high precision fraud detection and entity deduplication.
-
-**Data Strategist** | 7/2019 - 12/2020
-
-##### Jollibee Foods Corporation
-
-**Management Associate, Future Leaders Program** | 7/2018 - 12/2018
+Management Associate, Future Leaders Program | 7/2018 - 12/2018
 
 ### Education
 
-##### University of the Philippines, Diliman
+###### **University of the Philippines, Diliman**
 
-**MS Industrial Engineering, Human Factors Specialization** | 8/2020 - Present
+MS Industrial Engineering, Human Factors Specialization | 8/2020 - Present
 
-**BS Economics, *magna cum laude*** | 7/2014 - 6/2018
-
-### Technologies
-
-**Product Management**. Notion, Asana, Jira, Figma, Pivotal Tracker.
-
-**Data Analysis**. SQL, R, Python, Spreadsheets, Minitab, Stata.
-
-**Business Intelligence**. Metabase, Neo4j, Superset, Google Data Studio, Google Analytics, Anaplan.
-
-**Engineering (PM Capacity)**. Databases (Postgres), Data Warehousing (dbt), Orchestration (Docker, K8s, Airflow), APIs (REST, GraphQL), CI/CD (GitHub, Selenium), Frontends (Ruby on Rails, Webflow).
-
-### Volunteering
-
-**GenerationHope, Inc. (Supply Chain & Purchasing)**. Pro bono work for a social enterprise devoted to creating educational spaces and agricultural opportunity for the underserved.
-
-**UP Economics Society (Finance Director)**. Led financial operations for a benefit concert that handled P3M in cash flows and generated P1.2M in profit.
-
-**UP Bike Share Project (Executive Vice President)**. Led projects for a student-led organization managing a bike sharing system and funded with P15M by the DOST.
-
-**UP Marine Biological Society**. Coordination of relief operations for communities vulnerable to the adverse effects of climate change.
-
-**AIESEC in UP Diliman**. Ambassador for cross cultural volunteer exchange.
+BS Economics, *magna cum laude* | 7/2014 - 6/2018
 
 </font>

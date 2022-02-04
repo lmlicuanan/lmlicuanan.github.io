@@ -59,7 +59,7 @@ I make use of two R frameworks below:
 * `tidyverse` [@tidyverse] (or `dplyr` to be specific) for its suitability for data processing.
 * `targets` [@targets] as a pipeline toolkit for optimizing runtime.
 
-This exercise is best suited for someone already having some familiarity with these, but elaborate on core concepts all the same later.
+This exercise is best suited for someone already having some familiarity with these, but I elaborate on core concepts all the same later.
 
 # Data & Preprocessing
 
