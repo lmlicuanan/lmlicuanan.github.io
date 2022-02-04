@@ -48,7 +48,7 @@ tibble(long = 121.7740, lat = 12.8797) %>%
   fitBounds(117.17, 5.58, 126.54, 18.51)
 ```
 
-One I found intriguing was a study conducted by researchers from Thinking Machines Data Science, Inc., where they were able to spatially interpolate poverty incidences across the Philippines with extremely high accuracy, and rivaling state-of-the-art approaches on proprietary data [@ph_poverty_prediction_2018].
+One I found interesting was a study conducted by researchers from Thinking Machines Data Science, Inc., where they were able to spatially interpolate poverty incidences across the Philippines with extremely high accuracy, and rivaling state-of-the-art approaches on proprietary data [@ph_poverty_prediction_2018].
 
 Below I show just a very lightweight introduction for someone looking to get their feet wet with OpenStreetMap.
 
@@ -58,8 +58,6 @@ I make use of two R frameworks below:
 
 * `tidyverse` [@tidyverse] (or `dplyr` to be specific) for its suitability for data processing.
 * `targets` [@targets] as a pipeline toolkit for optimizing runtime.
-
-This exercise is best suited for someone already having some familiarity with these, but I elaborate on core concepts all the same later.
 
 # Data & Preprocessing
 
