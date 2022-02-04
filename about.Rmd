@@ -83,7 +83,7 @@ In my free time I boulder, go night running, and listen to podcasts.
 
 **Data Analysis**. SQL, R, Python, Spreadsheets, Minitab, Stata.
 
-**Business Intelligence**. Metabase, Neo4j, Superset, Google Data Studio, Anaplan.
+**Business Intelligence**. Metabase, Neo4j, Superset, Google Data Studio, Google Analytics, Anaplan.
 
 **Engineering (PM Capacity)**. Databases (Postgres), Data Warehousing (dbt), Orchestration (Docker, K8s, Airflow), APIs (REST, GraphQL), CI/CD (GitHub, Selenium), Frontends (Ruby on Rails, Webflow).
 
