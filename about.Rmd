@@ -19,7 +19,7 @@ output:
 
 ### Bio
 
-Hi, I'm Lino Licuanan. I'm a product manager with 3 years of experience in the Philippine fintech space (<a href=https://www.paymaya.com>PayMaya</a>, <a href=https://www.firstcircle.ph>First Circle</a>). Proficient in R & SQL for practical data science & analytics. Graduating MSc Industrial Engineering student @ UP Diliman by end of 2022.
+Hi, I'm Lino Licuanan. I'm a product manager with 3 years of experience in the fintech space (<a href=https://www.paymaya.com>PayMaya</a>, <a href=https://www.firstcircle.ph>First Circle</a>). Proficient in R & SQL for practical data science & analytics. Graduating MSc Industrial Engineering student @ UP Diliman by end of 2022.
 
 Particularly interested in products where data plays a central role in delivering superior CX, returns, and social benefit. Happy to consult with organizations on how to go about driving that.
 
@@ -51,7 +51,7 @@ In my free time I boulder, go night running, and listen to podcasts.
 
 * **Entity Resolution**. Led experimentation around use cases for a Graph Database. MVP’d company and person resolution from a gamut of entity sources, powering high precision fraud detection and entity deduplication.
 
-**Data Strategist** | 07/2019 - 12/2020
+**Data Strategist** | 7/2019 - 12/2020
 
 ##### Jollibee Foods Corporation
 
@@ -63,7 +63,7 @@ In my free time I boulder, go night running, and listen to podcasts.
 
 **MS Industrial Engineering, Human Factors Specialization** | 8/2020 - Present
 
-**BS Economics, *magna cum laude*** | 07/2014 - 06/2018
+**BS Economics, *magna cum laude*** | 7/2014 - 6/2018
 
 ### Technologies
 
