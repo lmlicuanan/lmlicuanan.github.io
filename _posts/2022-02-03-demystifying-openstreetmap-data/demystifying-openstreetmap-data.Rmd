@@ -19,6 +19,18 @@ bibliography: biblio.bib
 citation_url: https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/
 ---
 
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9MHZYW9421"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9MHZYW9421');
+</script>
+</head>
+
 # Introduction
 
 OpenStreetMap is a platform for crowdsourcing geospatial information from basically anywhere volunteers are willing to go. This makes it one of the most powerful databases readily available to the public -- contributors have been known to visit locations no single operator can reach (including Google). The database has use cases ranging from mapping far flung communities pre-calamity, to giving your Grab driver the best possible route.
