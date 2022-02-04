@@ -1,7 +1,7 @@
 ---
 title: "Demystifying OpenStreetMap Data"
 description: |
-  Suprisingly easy to grab rich information from one of the largest repositories of (free) geospatial data.
+  On accessing information from one of the largest repositories of (free) geospatial data.
 author:
   - name: Lino Licuanan
 date: 2022-02-03
