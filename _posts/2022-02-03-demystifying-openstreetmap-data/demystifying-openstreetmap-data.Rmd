@@ -33,7 +33,7 @@ gtag('config', 'G-9MHZYW9421');
 
 # Introduction
 
-OpenStreetMap is a platform for crowdsourcing geospatial information from basically anywhere volunteers are willing to go. This makes it one of the most powerful databases readily available to the public -- contributors have been known to visit locations no single operator can reach (including Google). The database has use cases ranging from mapping far flung communities pre-calamity, to giving your Grab driver the best possible route.
+[OpenStreetMap](https://www.openstreetmap.org/) is a platform for crowdsourcing geospatial information from basically anywhere volunteers are willing to go. This makes it one of the most powerful databases readily available to the public -- contributors have been known to visit locations no single operator can reach (including Google). The database has use cases ranging from mapping far flung communities pre-calamity, to giving your Grab driver the best possible route.
 
 ```{r, include=FALSE}
 suppressPackageStartupMessages({
@@ -48,30 +48,35 @@ tibble(long = 121.7740, lat = 12.8797) %>%
   fitBounds(117.17, 5.58, 126.54, 18.51)
 ```
 
-One I found interesting was a study conducted by researchers from Thinking Machines Data Science, Inc., where they were able to spatially interpolate poverty incidences across the Philippines with extremely high accuracy, and rivaling state-of-the-art approaches on proprietary data [@ph_poverty_prediction_2018].
-
-Below I show just a very lightweight introduction for someone looking to get their feet wet with OpenStreetMap.
+Below I show just a very lightweight introduction for analysts looking to get their feet wet with OpenStreetMap's API.
 
 # Prerequisites
 
-I make use of two R frameworks below:
+Make sure the following packages are installed:
 
-* `tidyverse` [@tidyverse] (or `dplyr` to be specific) for its suitability for data processing.
+* `tidyverse` [@tidyverse] as a convenient collection of packages for data processing and analysis.
 * `targets` [@targets] as a pipeline toolkit for optimizing runtime.
+* `sf` [@sf] for processing simple features, a popular standard for storing geospatial information.
+* `osmdata` [@osmdata] as an interface for transacting with the OpenStreetMap database.
 
 # Data & Preprocessing
 
 ### Setup
 
+Loading these packages immediately as they will be useful throughout. Notice also that we are clearing out any possible obsolete targets from previous runs (this is best practice when using `targets`).
+
 ```{r}
 suppressPackageStartupMessages({
   library(targets)
   library(tidyverse)
+  library(magrittr)
   library(sf)
 })
 
 tar_unscript()
 ```
+
+We set up the global environment for our pipeline. We set seed to guarantee reproducibility of some random sampling we are doing later on. This is different from the packages we just loaded in the sense that our targets exist in a separate environment.
 
 ```{targets globals, tar_globals = TRUE}
 tar_option_set(packages = c("osmdata", "tidyverse", "sf"))
@@ -85,13 +90,25 @@ It is generally advised to reset the requirement to verify certificates to `TRUE
 
 </aside>
 
+Loading `sf` objects tends to be a heavy process. We make extensive use of the `targets` framework to make sure code only runs if the chunk (or something upstream of it) changes. Absent of this, outputs are neatly stored as binaries, and accessed when needed.
+
 ### Bounding Box
+
+Once you are set up, we can start querying! All OSM queries start with what's called a *bounding box*. This tells your query what the area of interest is -- think of it like us cropping a blank canvas the size of the world map.
 
 ```{targets study-region}
 tar_target(study_region.bb, getbb("Makati", format_out = "polygon") %>% head(1))
 ```
 
+<aside>
+
+Notice that the `targets` syntax is variable name first, command to be assigned to the variable next.
+
+</aside>
+
 ### Overpass Queries
+
+OpenStreetMap data is served up by the Overpass API. We initialize a query to this API by giving `opq()` a bounding box and *features* we want to be found on our canvas. For our case, we are interested in administrative boundaries, roads, buildings, and amenities.
 
 ```{targets osm-queries}
 list(
@@ -118,7 +135,11 @@ list(
 )
 ```
 
+There is a wealth of other features you can add to your query -- the keys for these can be conveniently found on the [OpenStreetMap wiki](https://wiki.openstreetmap.org/wiki/Map_features).
+
 ### `sf` Objects
+
+Queries are just instructions. We execute these using `osmdata_sf()`. `trim_osmdata()`, meanwhile, is a handy way to retain only the `sf` objects that can be found within the study region's polygon.
 
 ```{targets osm-data}
 list(
@@ -140,9 +161,37 @@ list(
 )
 ```
 
+<aside>
+
+This is confusing because didn't we already clip the region via our Overpass queries? The difference is those cropped the area into a box. `study_region.bb` is actually a set of coordinates that hug Makati's boundary -- anything outside that polygon is taken out by `trim_osmdata()`
+
+</aside>
+
+We keep all the amenities here as this will become useful to our visualizations later.
+
+```{r, results='hide'}
+tar_make()
+```
+
+```{r}
+ggplot() + 
+  geom_sf(data = tar_read(city.sf) %$% osm_multipolygons) +
+  geom_sf(data = tar_read(boundary.sf) %$% osm_multipolygons) +
+  theme(
+    legend.position = "none",
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.background = element_blank()
+  ) + labs(caption = "Barangay Boundaries, City of Makati")
+```
+
 ### Preprocessing
 
 #### Amenity Classification
+
+We perform some data munging to classify important points of interest into tighter categories.
 
 ```{targets osm-data-amenity-point-cleaned}
 list(
@@ -166,6 +215,27 @@ list(
 )
 ```
 
+```{r, results='hide'}
+tar_make()
+```
+
+```{r}
+ggplot() + 
+  geom_sf(data = tar_read(city.sf) %$% osm_multipolygons) +
+  geom_sf(data = tar_read(boundary.sf) %$% osm_multipolygons) +
+  geom_sf(data = tar_read(amenity_point.sf), 
+          aes(group = amenity, colour = amenity), alpha = 0.6) + 
+  theme(
+    legend.position = "right",
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.background = element_blank()
+  ) + labs(caption = "Barangay Boundaries & Points of Interest, City of Makati") +
+  scale_colour_viridis_d()
+```
+
 #### Monte Carlo Sampling
 
 ```{targets random-data}
@@ -186,8 +256,11 @@ list(
 
 ### Pipeline
 
-```{r, echo=FALSE, message=FALSE}
+```{r, results='hide'}
 tar_make()
+```
+
+```{r}
 tar_visnetwork()
 ```
 
