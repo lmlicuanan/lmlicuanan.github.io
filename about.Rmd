@@ -37,6 +37,8 @@ Particularly interested in products where data plays a central role in deliverin
 
 Proficient in R & SQL for practical data science & analytics. Graduating MSc Industrial Engineering student @ UP Diliman by end of 2022. In my free time I boulder, go night running, and listen to podcasts.
  
+---
+
 ### Experience
 
 ###### **PayMaya Philippines, Inc.**
@@ -54,6 +56,8 @@ Data Strategy, Acquisition | 7/2019 - 12/2020
 ###### **Jollibee Foods Corporation**
 
 Management Associate, Future Leaders Program | 7/2018 - 12/2018
+
+---
 
 ### Education
 
