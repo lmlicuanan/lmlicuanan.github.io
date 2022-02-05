@@ -11,7 +11,6 @@ output:
     toc: true
     toc_float: true
 categories:
-  - draft
   - data-science
   - geospatial
 preview: makati.png
@@ -69,8 +68,9 @@ Loading these packages immediately as they will be useful throughout. Notice als
 suppressPackageStartupMessages({
   library(targets)
   library(tidyverse)
-  library(magrittr)
   library(sf)
+  library(magrittr)
+  library(gt)
 })
 
 tar_unscript()
@@ -173,7 +173,7 @@ We keep all the amenities here as this will become useful to our visualizations 
 tar_make()
 ```
 
-```{r}
+```{r, fig.align='center'}
 ggplot() + 
   geom_sf(data = tar_read(city.sf) %$% osm_multipolygons) +
   geom_sf(data = tar_read(boundary.sf) %$% osm_multipolygons) +
@@ -191,7 +191,17 @@ ggplot() +
 
 #### Amenity Classification
 
-We perform some data munging to classify important points of interest into tighter categories.
+We perform some data munging to classify important points of interest into tighter categories. You will notice we wrangle `sf` objects almost exactly as we would a dataframe. That's because it is one! Just with special properties.
+
+```{r, results='hide'}
+tar_make()
+```
+
+Here, `amenity.sf` contains various geometries (denoted by the prefix `osm_`) inside it -- think of them like layers of objects on our canvas.
+
+```{r}
+tar_read(amenity.sf) %>% summary()
+```
 
 ```{targets osm-data-amenity-point-cleaned}
 list(
@@ -215,11 +225,13 @@ list(
 )
 ```
 
-```{r, results='hide'}
-tar_make()
+```{r, fig.align='center'}
+tar_read(amenity_point.sf) %>% head(5) %>% gt()
 ```
 
-```{r}
+Putting our `sf`'s together, we get a map of Makati's points of interest.
+
+```{r, fig.align='center'}
 ggplot() + 
   geom_sf(data = tar_read(city.sf) %$% osm_multipolygons) +
   geom_sf(data = tar_read(boundary.sf) %$% osm_multipolygons) +
@@ -238,21 +250,27 @@ ggplot() +
 
 #### Monte Carlo Sampling
 
+Something we may be interested in doing is generating random samples on our study region. I sample 1000 below. I also make a point of only sampling within the city's boundaries (you can do this for other objects, like only sampling within buildings).
+
+Through `aggregate`, something cool you can also do is to compute parameters of interest within a radius of our sampled points. Here, I get a simple count of all establishments within 500m of each sample.
+
 ```{targets random-data}
 list(
   tar_target(
-    mc_point.sf, st_as_sf(st_sample(city.sf$osm_multipolygons, 22 * 16))
+    mc_point.sf, st_as_sf(st_sample(city.sf$osm_multipolygons, 1000))
   ),
   tar_target(
     mc_point_params.sf, aggregate(
       amenity_point.sf,
       mc_point.sf,
       FUN = function(x) sum(as.logical(x), na.rm = TRUE),
-      join = function(x, y) st_is_within_distance(x, y, dist = 250)
+      join = function(x, y) st_is_within_distance(x, y, dist = 500)
     ) %>% filter(!is.na(amenity))
   )
 )
 ```
+
+If you're having a hard time grasping what is happening, a neat way of thinking about is `amenity_point.sf` is your raw data, and it is "pinched" at points `mc_point.sf` to compress all raw data within the radius into just `mc_points.sf`'s points. Therefore, expect just 1000 rows in your dataframe.
 
 ### Pipeline
 
@@ -260,7 +278,9 @@ list(
 tar_make()
 ```
 
-```{r}
+Here's the graph of data transformations we just created, in case `targets` is starting to get a bit overwhelming!
+
+```{r, fig.align='center'}
 tar_visnetwork()
 ```
 
@@ -270,22 +290,69 @@ httr::set_config(httr::config(ssl_verifypeer = TRUE))
 
 # Visualization
 
-```{r}
+We've already snuck in some plots above, but let's go even further here.
+
+```{r, fig.align='center'}
 building.sf <- tar_read(building.sf)
+city.sf <- tar_read(city.sf)
+boundary.sf <- tar_read(boundary.sf)
 road.sf <- tar_read(road.sf)
 amenity_point.sf <- tar_read(amenity_point.sf)
 mc_point_params.sf <- tar_read(mc_point_params.sf)
 
 ggplot() +
+  geom_sf(data = city.sf %$% osm_multipolygons) +
+  geom_sf(data = boundary.sf %$% osm_multipolygons) +
+  geom_sf(data = amenity_point.sf %>% filter(bank), alpha = 0.8) +
+  geom_sf(data = mc_point_params.sf, 
+          aes(alpha = bank, size = bank), col = "red") +
+  theme(
+    legend.position = "right",
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.background = element_blank()
+  ) +
+  scale_colour_viridis_d() +
+  labs(
+    caption = "Bank density measured by counting bank branches within a 500-m radius."
+  )
+```
+
+Notice above that our aggregated parameters are also counting banks outside the study region. This is a method of edge correction to make sure we capture reality, despite administrative boundaries. Imagine us trimming these points of interest prematurely -- we would have concluded that points around Taguig's boundary had little exposure to banks (which we all know is wrong).
+
+Putting it all together, we get this pretty cool plot.
+
+```{r, fig.align='center'}
+ggplot() +
+  geom_sf(data = city.sf %$% osm_multipolygons) +
+  geom_sf(data = boundary.sf %$% osm_multipolygons) +
   geom_sf(data = building.sf$osm_polygons) +
   geom_sf(data = road.sf$osm_lines) +
   geom_sf(data = amenity_point.sf %>% filter(!bank),
           aes(group = amenity, colour = amenity),
           alpha = 0.8) +
-  geom_sf(data = mc_point_params.sf, aes(alpha = bank, size = bank), col = "red") +
+  geom_sf(data = mc_point_params.sf, 
+          aes(alpha = bank, size = bank), col = "red") +
+  theme(
+    legend.position = "right",
+    legend.title = element_text(size = 9), 
+    legend.text = element_text(size = 8),
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.background = element_blank()
+  ) +
   scale_colour_viridis_d() +
   labs(
-    title = "Points of Interest and Bank Density in the City of Makati, Philippines",
-    caption = "Bank density measured by counting bank branches within 250-m radius."
+    caption = "Bank density measured by counting bank branches within a 500-m radius."
   )
 ```
+
+Now it's possible to see patterns -- banks seem to be clustering around that long highway on the left; banks and other points of interest seem to co-locate; there is definitely some spatial autocorrelation; etc.
+
+We won't cover spatial statistics here, but this should give you enough to go on!
+
+If you found this useful or would like to collaborate with me, feel free to reach out at [linolicuanan@gmail.com](mailto:linolicuanan@gmail.com). For citing this article, use the BibTeX found below.
