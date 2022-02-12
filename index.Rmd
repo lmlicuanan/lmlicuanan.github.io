@@ -26,12 +26,13 @@ library(metathis)
 
 meta() %>%
   meta_description(
-    "Lino Licuanan. An attempt at documenting my work and learnings."
+    "An attempt at documenting my work and learnings."
   ) %>% 
   meta_name("github-repo" = "lmlicuanan/lmlicuanan.github.io") %>% 
   meta_viewport() %>% 
   meta_social(
     title = "lino licuanan: Stories",
+    description = "An attempt at documenting my work and learnings.",
     url = "https://lmlicuanan.github.io/",
     image = "https://lmlicuanan.github.io/assets/lino.png",
     og_author = c("Lino Licuanan")

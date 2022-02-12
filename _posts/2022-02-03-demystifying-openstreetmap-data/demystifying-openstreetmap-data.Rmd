@@ -49,6 +49,7 @@ meta() %>%
   meta_viewport() %>% 
   meta_social(
     title = "Demystifying OpenStreetMap Data",
+    description = "On accessing information from one of the largest repositories of (free) geospatial data.",
     url = "https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/",
     image = glue::glue("https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/",
                        "demystifying-openstreetmap-data_files/figure-html5/unnamed-chunk-13-1.png"),
