@@ -2,6 +2,7 @@
 title: "Lino Licuanan"
 favicon: https://images.emojiterra.com/google/noto-emoji/v2.028/128px/1f44b.png
 image: "assets/lino.png"
+base_url: https://lmlicuanan.github.io/
 links:
   - label: LinkedIn
     url: "https://linkedin.com/in/lmlicuanan/"

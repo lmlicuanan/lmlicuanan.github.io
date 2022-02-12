@@ -3,6 +3,7 @@ title: "Stories"
 site: distill::distill_website
 listing: posts
 preview: assets/lino.png
+base_url: https://lmlicuanan.github.io/
 ---
 
 <head>

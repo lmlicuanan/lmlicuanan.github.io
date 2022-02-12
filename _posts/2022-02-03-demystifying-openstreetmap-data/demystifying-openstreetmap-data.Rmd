@@ -13,6 +13,7 @@ output:
 categories:
   - data-science
   - geospatial
+base_url: https://lmlicuanan.github.io/
 preview: makati.png
 bibliography: biblio.bib
 citation_url: https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/
