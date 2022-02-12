@@ -41,9 +41,8 @@ meta() %>%
   meta_social(
     title = "lino licuanan: Stories",
     url = "https://lmlicuanan.github.io/",
-    image = "assets/lino.png",
-    og_author = c("Lino Licuanan"),
-    twitter_card_type = "summary"
+    image = "https://lmlicuanan.github.io/assets/lino.png",
+    og_author = c("Lino Licuanan")
   )
 ```
 
