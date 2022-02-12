@@ -5,7 +5,7 @@ output_dir: "docs"
 navbar:
   search: false
   right:
-    - text: "Articles"
+    - text: "Stories"
       href: index.html
     - text: "About"
       href: about.html

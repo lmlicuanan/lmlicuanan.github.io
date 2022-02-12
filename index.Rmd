@@ -1,5 +1,5 @@
 ---
-title: "Articles"
+title: "Stories"
 site: distill::distill_website
 listing: posts
 ---
