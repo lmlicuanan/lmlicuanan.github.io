@@ -29,6 +29,24 @@ output:
 
 <font size="2">
 
+```{r, include=FALSE}
+library(metathis)
+
+meta() %>%
+  meta_description(
+    "Lino Licuanan. An attempt at documenting my work and learnings."
+  ) %>% 
+  meta_name("github-repo" = "lmlicuanan/lmlicuanan.github.io") %>% 
+  meta_viewport() %>% 
+  meta_social(
+    title = "lino licuanan: Stories",
+    url = "https://lmlicuanan.github.io/",
+    image = "assets/lino.png",
+    og_author = c("Lino Licuanan"),
+    twitter_card_type = "summary"
+  )
+```
+
 ### Bio
 
 Hi, I'm Lino Licuanan. I am a product manager with 3 years of experience in the Philippine fintech space orchestrating product strategy from concept to execution.

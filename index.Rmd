@@ -21,6 +21,25 @@ preview: assets/lino.png
 
 <font size="2">
 
+```{r, include=FALSE}
+library(metathis)
+
+meta() %>%
+  meta_description(
+    "Lino Licuanan. An attempt at documenting my work and learnings."
+  ) %>% 
+  meta_name("github-repo" = "lmlicuanan/lmlicuanan.github.io") %>% 
+  meta_viewport() %>% 
+  meta_social(
+    title = "lino licuanan: Stories",
+    url = "https://lmlicuanan.github.io/",
+    image = "assets/lino.png",
+    og_author = c("Lino Licuanan"),
+    twitter_card_type = "summary"
+  )
+```
+
+
 ```{r, echo=FALSE, results='asis', out.width= "20%", out.extra='style="float:left; padding-right:30px"'}
 knitr::include_graphics("assets/lino.png")
 

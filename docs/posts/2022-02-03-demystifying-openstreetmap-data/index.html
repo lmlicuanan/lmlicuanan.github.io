@@ -2121,12 +2121,12 @@ d-appendix d-footnote-list a.footnote-backlink {
   <meta name="twitter:title" content="Demystifying OpenStreetMap Data"/>
   <meta name="twitter:description" content="On accessing information from one of the largest repositories of (free) geospatial data."/>
   <meta name="twitter:url" content="https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/"/>
-  <meta name="twitter:image" content="makati.png"/>
+  <meta name="twitter:image" content="https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/demystifying-openstreetmap-data_files/figure-html5/unnamed-chunk-13-1.png"/>
   <meta name="twitter:card" content="summary"/>
   <meta property="og:title" content="Demystifying OpenStreetMap Data"/>
   <meta property="og:description" content="On accessing information from one of the largest repositories of (free) geospatial data."/>
   <meta property="og:url" content="https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/"/>
-  <meta property="og:image" content="makati.png"/>
+  <meta property="og:image" content="https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/demystifying-openstreetmap-data_files/figure-html5/unnamed-chunk-13-1.png"/>
   <meta property="og:type" content="website"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="article:author" content="Lino Licuanan"/>
@@ -2232,8 +2232,8 @@ gtag('config', 'G-9MHZYW9421');
 <h1 id="introduction">Introduction</h1>
 <p><a href="https://www.openstreetmap.org/">OpenStreetMap</a> is a platform for crowdsourcing geospatial information from basically anywhere volunteers are willing to go. This makes it one of the most powerful databases readily available to the public – contributors have been known to visit locations no single operator can reach (including Google). The database has use cases ranging from mapping far flung communities pre-calamity, to giving your Grab driver the best possible route.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-86d91294c93e28889571" style="width:900px;height:384px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-86d91294c93e28889571">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[12.8797,121.774,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[12.8797,12.8797],"lng":[121.774,121.774]},"fitBounds":[5.58,117.17,18.51,126.54,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-56021d5e38950cadb3e4" style="width:900px;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-56021d5e38950cadb3e4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[12.8797,121.774,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[12.8797,12.8797],"lng":[121.774,121.774]},"fitBounds":[5.58,117.17,18.51,126.54,[]]},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>Below I show just a very lightweight introduction for analysts looking to get their feet wet with OpenStreetMap’s API.</p>
 <h1 id="prerequisites">Prerequisites</h1>
@@ -2405,12 +2405,12 @@ osm_multipolygons  49    sf     list     </code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://docs.ropensci.org/targets/reference/tar_read.html'>tar_read</a></span><span class='op'>(</span><span class='va'>amenity_point.sf</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/magrittr/man/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://docs.ropensci.org/targets/reference/tar_pattern.html'>head</a></span><span class='op'>(</span><span class='fl'>5</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/magrittr/man/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://rdrr.io/pkg/gt/man/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="pkfzvhrmlt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="icimvnkoxm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#pkfzvhrmlt .gt_table {
+#icimvnkoxm .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2435,7 +2435,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-left-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_heading {
+#icimvnkoxm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2447,7 +2447,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_title {
+#icimvnkoxm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2457,7 +2457,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-bottom-width: 0;
 }
 
-#pkfzvhrmlt .gt_subtitle {
+#icimvnkoxm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2467,13 +2467,13 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-top-width: 0;
 }
 
-#pkfzvhrmlt .gt_bottom_border {
+#icimvnkoxm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_col_headings {
+#icimvnkoxm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2488,7 +2488,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_col_heading {
+#icimvnkoxm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2508,7 +2508,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   overflow-x: hidden;
 }
 
-#pkfzvhrmlt .gt_column_spanner_outer {
+#icimvnkoxm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2520,15 +2520,15 @@ osm_multipolygons  49    sf     list     </code></pre>
   padding-right: 4px;
 }
 
-#pkfzvhrmlt .gt_column_spanner_outer:first-child {
+#icimvnkoxm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pkfzvhrmlt .gt_column_spanner_outer:last-child {
+#icimvnkoxm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pkfzvhrmlt .gt_column_spanner {
+#icimvnkoxm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2540,7 +2540,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   width: 100%;
 }
 
-#pkfzvhrmlt .gt_group_heading {
+#icimvnkoxm .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2562,7 +2562,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   vertical-align: middle;
 }
 
-#pkfzvhrmlt .gt_empty_group_heading {
+#icimvnkoxm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2577,15 +2577,15 @@ osm_multipolygons  49    sf     list     </code></pre>
   vertical-align: middle;
 }
 
-#pkfzvhrmlt .gt_from_md > :first-child {
+#icimvnkoxm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pkfzvhrmlt .gt_from_md > :last-child {
+#icimvnkoxm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pkfzvhrmlt .gt_row {
+#icimvnkoxm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2604,7 +2604,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   overflow-x: hidden;
 }
 
-#pkfzvhrmlt .gt_stub {
+#icimvnkoxm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2616,7 +2616,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   padding-left: 12px;
 }
 
-#pkfzvhrmlt .gt_summary_row {
+#icimvnkoxm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2626,7 +2626,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   padding-right: 5px;
 }
 
-#pkfzvhrmlt .gt_first_summary_row {
+#icimvnkoxm .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2636,7 +2636,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-top-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_grand_summary_row {
+#icimvnkoxm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2646,7 +2646,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   padding-right: 5px;
 }
 
-#pkfzvhrmlt .gt_first_grand_summary_row {
+#icimvnkoxm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2656,11 +2656,11 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-top-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_striped {
+#icimvnkoxm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pkfzvhrmlt .gt_table_body {
+#icimvnkoxm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2669,7 +2669,7 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_footnotes {
+#icimvnkoxm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2683,13 +2683,13 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_footnote {
+#icimvnkoxm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#pkfzvhrmlt .gt_sourcenotes {
+#icimvnkoxm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2703,41 +2703,41 @@ osm_multipolygons  49    sf     list     </code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pkfzvhrmlt .gt_sourcenote {
+#icimvnkoxm .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#pkfzvhrmlt .gt_left {
+#icimvnkoxm .gt_left {
   text-align: left;
 }
 
-#pkfzvhrmlt .gt_center {
+#icimvnkoxm .gt_center {
   text-align: center;
 }
 
-#pkfzvhrmlt .gt_right {
+#icimvnkoxm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pkfzvhrmlt .gt_font_normal {
+#icimvnkoxm .gt_font_normal {
   font-weight: normal;
 }
 
-#pkfzvhrmlt .gt_font_bold {
+#icimvnkoxm .gt_font_bold {
   font-weight: bold;
 }
 
-#pkfzvhrmlt .gt_font_italic {
+#icimvnkoxm .gt_font_italic {
   font-style: italic;
 }
 
-#pkfzvhrmlt .gt_super {
+#icimvnkoxm .gt_super {
   font-size: 65%;
 }
 
-#pkfzvhrmlt .gt_footnote_marks {
+#icimvnkoxm .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -2869,8 +2869,8 @@ osm_multipolygons  49    sf     list     </code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://docs.ropensci.org/targets/reference/tar_visnetwork.html'>tar_visnetwork</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<div id="htmlwidget-7b90a0abdbb33d63d3a9" style="width:624px;height:384px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7b90a0abdbb33d63d3a9">{"x":{"nodes":{"name":["amenity_point.sf","amenity.ql","amenity.sf","boundary.ql","boundary.sf","building.ql","building.sf","city.ql","city.sf","mc_point_params.sf","mc_point.sf","road.ql","road.sf","study_region.bb"],"type":["stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0.287,3.928,14.312,0.001,71.375,0.002,3621.374,0.002,19.086,6.385,4.424,0.001,466.407,5.968],"bytes":[52430,252,565388,259,118965,255,8028241,260,41128,25766,15787,255,1077976,10696],"branches":[null,null,null,null,null,null,null,null,null,null,null,null,null,null],"id":["amenity_point.sf","amenity.ql","amenity.sf","boundary.ql","boundary.sf","building.ql","building.sf","city.ql","city.sf","mc_point_params.sf","mc_point.sf","road.ql","road.sf","study_region.bb"],"label":["amenity_point.sf","amenity.ql","amenity.sf","boundary.ql","boundary.sf","building.ql","building.sf","city.ql","city.sf","mc_point_params.sf","mc_point.sf","road.ql","road.sf","study_region.bb"],"level":[4,2,3,2,3,2,3,2,3,5,4,2,3,1],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823"],"shape":["dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["city.sf","study_region.bb","boundary.ql","study_region.bb","study_region.bb","amenity.sf","study_region.bb","amenity.ql","amenity_point.sf","mc_point.sf","study_region.bb","study_region.bb","building.ql","study_region.bb","city.ql","study_region.bb","road.ql","study_region.bb"],"to":["mc_point.sf","amenity.ql","boundary.sf","boundary.sf","city.ql","amenity_point.sf","road.ql","amenity.sf","mc_point_params.sf","mc_point_params.sf","building.ql","boundary.ql","building.sf","building.sf","city.sf","city.sf","road.sf","road.sf"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem"],"color":["#354823","#899DA4"],"shape":["dot","dot"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b785f3646686c7c77b5b" style="width:624px;height:384px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b785f3646686c7c77b5b">{"x":{"nodes":{"name":["amenity_point.sf","amenity.ql","amenity.sf","boundary.ql","boundary.sf","building.ql","building.sf","city.ql","city.sf","mc_point_params.sf","mc_point.sf","road.ql","road.sf","study_region.bb"],"type":["stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0.287,3.928,14.312,0.001,71.375,0.002,3621.374,0.002,19.086,6.385,4.424,0.001,466.407,5.968],"bytes":[52430,252,565388,259,118965,255,8028241,260,41128,25766,15787,255,1077976,10696],"branches":[null,null,null,null,null,null,null,null,null,null,null,null,null,null],"id":["amenity_point.sf","amenity.ql","amenity.sf","boundary.ql","boundary.sf","building.ql","building.sf","city.ql","city.sf","mc_point_params.sf","mc_point.sf","road.ql","road.sf","study_region.bb"],"label":["amenity_point.sf","amenity.ql","amenity.sf","boundary.ql","boundary.sf","building.ql","building.sf","city.ql","city.sf","mc_point_params.sf","mc_point.sf","road.ql","road.sf","study_region.bb"],"level":[4,2,3,2,3,2,3,2,3,5,4,2,3,1],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823"],"shape":["dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["city.sf","study_region.bb","boundary.ql","study_region.bb","study_region.bb","amenity.sf","study_region.bb","amenity.ql","amenity_point.sf","mc_point.sf","study_region.bb","study_region.bb","building.ql","study_region.bb","city.ql","study_region.bb","road.ql","study_region.bb"],"to":["mc_point.sf","amenity.ql","boundary.sf","boundary.sf","city.ql","amenity_point.sf","road.ql","amenity.sf","mc_point_params.sf","mc_point_params.sf","building.ql","boundary.ql","building.sf","building.sf","city.sf","city.sf","road.sf","road.sf"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem"],"color":["#354823","#899DA4"],"shape":["dot","dot"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 <h1 id="visualization">Visualization</h1>
 <p>We’ve already snuck in some plots above, but let’s go even further here.</p>

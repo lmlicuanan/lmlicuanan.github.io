@@ -50,8 +50,10 @@ meta() %>%
   meta_social(
     title = "Demystifying OpenStreetMap Data",
     url = "https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/",
-    image = "makati.png",
-    og_author = c("Lino Licuanan")
+    image = glue::glue("https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/",
+                       "demystifying-openstreetmap-data_files/figure-html5/unnamed-chunk-13-1.png"),
+    og_author = c("Lino Licuanan"),
+    twitter_card_type = "summary"
   )
 ```
 
