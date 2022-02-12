@@ -38,7 +38,21 @@ gtag('config', 'G-9MHZYW9421');
 suppressPackageStartupMessages({
   library(tidyverse)
   library(leaflet)
+  library(metathis)
 })
+
+meta() %>%
+  meta_description(
+    "On accessing information from one of the largest repositories of (free) geospatial data."
+  ) %>% 
+  meta_name("github-repo" = "lmlicuanan/lmlicuanan.github.io") %>% 
+  meta_viewport() %>% 
+  meta_social(
+    title = "Demystifying OpenStreetMap Data",
+    url = "https://lmlicuanan.github.io/posts/2022-02-03-demystifying-openstreetmap-data/",
+    image = "makati.png",
+    og_author = c("Lino Licuanan")
+  )
 ```
 
 ```{r, echo=FALSE}
