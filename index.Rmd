@@ -44,7 +44,7 @@ meta() %>%
 ```{r, echo=FALSE, results='asis', out.width= "20%", out.extra='style="float:left; padding-right:30px"'}
 knitr::include_graphics("assets/lino.png")
 
-cat("<b>Lino Licuanan.</b> I am a product manager with stints in credit, web3, payments, and data products (<a href=https://www.growsari.com>Growsari</a>, <a href=https://www.paymaya.com>Maya</a>, <a href=https://www.firstcircle.ph>First Circle</a>, <a href=https://www.breederdao.io>BreederDAO</a>), specializing in data products. Graduating MSc Industrial Engineering student @ UP Diliman.<br>")
+cat("<b>Lino Licuanan.</b> I am a product manager with stints in credit, web3, payments, and data products (<a href=https://www.growsari.com>Growsari</a>, <a href=https://www.paymaya.com>Maya</a>, <a href=https://www.firstcircle.ph>First Circle</a>, <a href=https://www.breederdao.io>BreederDAO</a>). Graduating MSc Industrial Engineering student @ UP Diliman 2022.<br>")
 
 cat("This is an attempt at documenting my work and learnings. Will probably get things wrong here and there haha so do your own research.")
 ```
