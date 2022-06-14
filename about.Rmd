@@ -50,27 +50,37 @@ meta() %>%
 
 ### Bio
 
-Hi, I'm Lino Licuanan. I am a product manager with 3 years of experience in the Philippine fintech space orchestrating product strategy from concept to execution.
 
-Particularly interested in products where data plays a central role in delivering superior CX, returns, and social benefit. Happy to consult with organizations on how to go about driving that.
 
-Proficient in R & SQL for practical data science & analytics. Graduating MSc Industrial Engineering student @ UP Diliman by end of 2022. In my free time I boulder, go night running, and listen to podcasts.
+Hi, I'm Lino Licuanan. I am a product manager with stints in credit, web3, payments, and data products. I previously led product strategy for a $40M series A startup. 
+
+I am well versed in data methodologies (R, SQL), and am graduating MSc Industrial Engineering @ UP Diliman by end of 2022. My passions lie with developing products that increase access to life giving services.
+
+In my free time I boulder, go night running, and listen to podcasts.
  
 ---
 
 ### Experience
 
+###### **Growsari, Inc.**
+
+Senior Product Associate | 6/2022 - Present
+
+###### **Top Unicorn Holdings Ltd. (Doing Business as BreederDAO)**
+
+Consultant, Data Products | 3/2022 - Present
+
 ###### **PayMaya Philippines, Inc.**
 
-Product Management, Identities & Profiles | 2/2022 - Present
+Product Management Specialist, Onboarding & Identity | 2/2022 - 6/2022
 
 ###### **First Circle Growth Finance Corporation**
 
-Lead Product Management, Revolving Credit Line | 9/2021 - 2/2022
+Product Lead, Revolving Credit Line | 9/2021 - 2/2022
 
-Data Product Management, Underwriting System | 1/2021 - 8/2021
+Data Product Manager, Underwriting System | 1/2021 - 8/2021
 
-Data Strategy, Acquisition | 7/2019 - 12/2020
+Data Strategist, Risk & Acquisition | 7/2019 - 12/2020
 
 ###### **Jollibee Foods Corporation**
 
